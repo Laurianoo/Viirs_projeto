@@ -80,15 +80,9 @@ def enviar_mensagem(WHAPI_TOKEN, id_do_grupo, mensagem):
     mensagem (str): Texto da mensagem a ser enviada
     """
     url = "https://gate.whapi.cloud/messages/text"
-    headers = {
-        "Authorization": f"Bearer {WHAPI_TOKEN}",
-        "Content-Type": "application/json"
-    }
+    headers = {"Authorization": f"Bearer {WHAPI_TOKEN}", "Content-Type": "application/json"}
     
-    payload = {
-        "to": id_do_grupo,
-        "body": mensagem
-    }
+    payload = {"to": id_do_grupo, "body": mensagem}
     
     try:
         response = requests.post(url, json=payload, headers=headers)
